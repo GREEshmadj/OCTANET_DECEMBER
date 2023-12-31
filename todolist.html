@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekly Calendar</title>
+</head>
+<body>
+    <script>
+        // Your C code goes here
+        // However, C code cannot be directly executed in a web browser
+        // Consider using JavaScript for browser-based functionality
+    </script>
+    <h1>Weekly Calendar</h1>
+    <div id="calendarDetails">
+        <!-- Calendar details will be displayed here -->
+    </div>
+    <script>
+        // JavaScript for displaying calendar details
+        // You can convert the C logic into JavaScript for the browser
+
+        // Example data to display (JavaScript)
+        const weeklyCalendar = [
+            { acDayName: 'Monday', iDate: 1, acActivity: 'Work' },
+            { acDayName: 'Tuesday', iDate: 2, acActivity: 'Study' },
+            // ... (populate with your calendar data)
+        ];
+
+        // Display the week's activity details
+        function displayCalendar(calendar) {
+            const calendarDiv = document.getElementById('calendarDetails');
+            calendarDiv.innerHTML = '<h2>Week\'s Activity Details</h2>';
+            for (let i = 0; i < calendar.length; i++) {
+                calendarDiv.innerHTML += `
+                    <div>
+                        <h3>Day ${i + 1}</h3>
+                        ${calendar[i].iDate === 0 ? '<p>No Activity</p>' : `
+                            <p>Day Name: ${calendar[i].acDayName}</p>
+                            <p>Date: ${calendar[i].iDate}</p>
+                            <p>Activity: ${calendar[i].acActivity}</p>
+                        `}
+                    </div>`;
+            }
+        }
+
+        // Call the function to display the calendar
+        displayCalendar(weeklyCalendar);
+    </script>
+</body>
+</html>
